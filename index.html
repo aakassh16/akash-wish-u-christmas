@@ -12,8 +12,10 @@
 
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="assets/css/styles.css">
+        
 
-        <title>Responsive christmas website</title>
+
+        <title>Akash Wish You Merry Christmas</title>
     </head>
     <body>
         <!--==================== HEADER ====================-->
@@ -64,6 +66,7 @@
             <!--==================== HOME ====================-->
             <section class="home section" id="home">
                 <h1 class="home__title">Merry Christmas</h1>
+                               
                 <img src="assets/img/home-moon.png" alt="home image" class="home__moon parallax" data-rellax-speed="-13">
                 <img src="assets/img/home-trineo-santa.png" alt="home image" class="home__trineo parallax" data-rellax-speed="-2">
                 <img src="assets/img/home-mountain-3.png" alt="home image" class="home__mountain-3 parallax" data-rellax-speed="-6">
@@ -72,7 +75,10 @@
                 <img src="assets/img/home-village.png" alt="home image" class="home__village parallax" data-rellax-speed="-4">
                 <img src="assets/img/home-snow.png" alt="home image" class="home__snow parallax">
                 <img src="assets/img/home-mountain-1.png" alt="home image" class="home__mountain-1">
+                       
+
             </section>
+            
 
             <!--==================== ABOUT ====================-->
             <section class="about section" id="about">
@@ -84,11 +90,10 @@
                         </h2>
 
                         <p class="about__description">
-                            Christmas is a global celebration on December 25th, marking the birth of Jesus Christ. 
-                            It unites people in joy, love, and generosity, fostering togetherness and goodwill. 
-                            Families exchange gifts, decorate homes, and share delicious meals, creating a festive atmosphere. 
-                            Beyond religious significance, Christmas is a time for reflection, gratitude, and spreading kindness, 
-                            transcending cultural boundaries for a shared experience of hope and giving.
+                            Christmas, globally celebrated on December 25th, marks the birth of Jesus Christ. 
+                            It fosters unity through traditions like gift exchanges and festive decorations. 
+                            Beyond its religious roots, Christmas encourages reflection, gratitude, and acts of kindness, 
+                            creating a shared experience of hope and giving that transcends cultural boundaries.
 
                         </p>
 
@@ -110,52 +115,87 @@
                     Send Love This <br>
                     Christmas
                 </h2>
-            
+
                 <div class="send__container container grid">
                     <div class="send__card">
                         <img src="assets/img/send-night.png" alt="send image" class="send__img">
+
                         <h3 class="send__title">
                             Spend It With Family
                         </h3>
+
                         <p class="send__description">
                             Sharing with family is the 
                             best gift you can give.
                         </p>
                     </div>
-            
+
                     <div class="send__card">
                         <img src="assets/img/send-gifts.png" alt="send image" class="send__img">
+
                         <h3 class="send__title">
                             Give Lots Of Love
                         </h3>
+
                         <p class="send__description">
                             Send a gift and a lot of love 
                             to those most in need.
                         </p>
-                        <a href="https://api.whatsapp.com/send?text=Merry Christmas" class="button">
-                            Send Gifts
-                        </a>
+                        
                     </div>
-            
+
                     <div class="send__card">
                         <img src="assets/img/send-santa.png" alt="send image" class="send__img">
+
                         <h3 class="send__title">
                             Share Good Wishes
                         </h3>
+
                         <p class="send__description">
                             Wish good messages to loved 
                             ones this Christmas.
                         </p>
+
+                        <a href="#send-gifts" id="send-gifts" class="button" onclick="celebrate()">
+                            Send Gifts
+                        </a>
+
+                        <div id="gift-form" style="display:none;">
+    
+                            <label for="gender">Gender:</label>
+                            <select id="gender" required>
+                              <option value="select">Select</option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                              
+                            </select>
+                        
+                            <label for="age">Age:</label>
+                            <input type="number" id="age" placeholder="Enter your age" required>
+                        
+                        
+                            <button onclick="getGiftSuggestions()" id="s_button">Submit</button>
+                            <button onclick="cancelCelebration()" id="c_button">Cancel</button>
+                        </div>
+                        
+                        <div id="gift-result" style="display:none;">
+                            <h2>Gift Suggestions</h2>
+                            <p id="gift-text"></p>
+                            <img id="gift-image" alt="Gift Image">
+                            <button onclick="buyGiftResult()" id="close-button">Buy Now</button>
+                        </div>
+
+
                     </div>
-            
+
                     <img src="assets/img/snow-img.png" alt="send image" class="send__snow-1">
                     <img src="assets/img/snow-img.png" alt="send image" class="send__snow-2">
                     <img src="assets/img/snow-img.png" alt="send image" class="send__snow-3">
+                    
                 </div>
+
+                
             </section>
-            
-
-
 
             <!--==================== CELEBRATE ====================-->
             <section class="celebrate section" id="celebrate">
@@ -172,36 +212,49 @@
                             and neighbors, wishing them a good Christmas message.
                         </p>
 
-                        <a href="#" class="button">
+                        <a href="#celebrateNow" id="celebrateNow" class="button">
                             Celebrate Now
                         </a>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                          <div class="col-12">
-                            <h3 class="text-center text-light my-5"><strong></strong></h3>
-                          </div>
-                          <div class="col-12 mt-5 d-flex justify-content-center">
-                            <div class="box">
-                              <div class="box-body">
-                                <img class="img" src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/17488.png">
-                                <div class="box-lid">
-                                  
-                                  <div class="box-bowtie"></div>
-                                  
-                                </div>
-                              </div>
+                        <div id="container" style="display:none;">
+                            <div id="music_img">
+                                <img id="song1_img" src="assets/img/song1_img.jpg" alt="song1_image" style="display: none;">
+                                <img id="song2_img" src="assets/img/song2_img.jpg" alt="song2_image" style="display: none;">
+                                <img id="song3_img" src="assets/img/song3_img.jpg" alt="song3_image" style="display: none;">
+                                <img id="song4_img" src="assets/img/song4_img.jpg" alt="song4_image" style="display: none;">
+                                <img id="song5_img" src="assets/img/song5_img.jpg" alt="song5_image" style="display: none;">
                             </div>
-                          </div>
+                            <div id="music_row">
+                                <div id="musicPlayer">
+                                    <div id="songDetails"></div>
+                                </div>
+                        
+                                <button id="hideRevealButton" style="display:none;" onclick="toggleVisibility();"><i id="eyeIcon" class="ri-eye-fill"></i></button>
+                            </div>
                         </div>
-                      </div>
+                        <div id="songList" style="display:none;">
+                            
+                            <h3>Song List</h3>
+                            
+                            <ul id="playlist">
+                                <li id= "song1" data-src="assets/music/Last_Christmas.mp3">Last Christmas   -by Wham!</li>
+                                <li id= "song2" data-src="assets/music/Its_Beginnig_to_look_a_lot_like_Christmas.mp3">It's Beginning to Look a Lot Like Christmas   -by Michael Bublé</li>
+                                <li id= "song3" data-src="assets/music/All_I_Want_for_Christmas_Is_You.mp3">All I Want for Christmas Is You    -by Mariah Carey</li>
+                                <li id= "song4" data-src="assets/music/Snowman.mp3">Snowman   -by Sia</li>
+                                <li id= "song5" data-src="assets/music/Jingel_Bell_Rock.mp3">Jingel Bell Rock   -by Bobby Helms</li>
+                                <!-- Add more songs as needed -->
+                            </ul>
+                        </div>
+                        
+
+                    </div>             
 
                     <img src="assets/img/celebarte-church.png" alt="celebrate image" class="celebrate__img">
-
                     <img src="assets/img/snow-img.png" alt="celebrate image" class="celebrate__snow-1">
                     <img src="assets/img/snow-img.png" alt="celebrate image" class="celebrate__snow-2">
                 </div>
             </section>
+
+
         </main>
 
         <!--==================== FOOTER ====================-->
@@ -223,14 +276,14 @@
                     </li>
 
                     <li>
-                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" class="footer__social-link">
-                            <i class="ri-mail-fill"></i>
+                        <a href="https://github.com/aakassh16" target="_blank" class="footer__social-link">
+                            <i class="ri-github-fill"></i>
                         </a>
                     </li>
                 </ul>
 
                 <span class="footer__copy">
-                    &#169; Copyright Akash_K. All rights reserved
+                    &#169; Copyright AKASH_K. All rights reserved
                 </span>
 
                 <img src="assets/img/snow-img.png" alt="footer image" class="footer__snow-1">
@@ -247,6 +300,7 @@
         <!--=============== RELLAX JS ===============-->
         <script src="assets/js/rellax.min.js"></script>
         <script src="https://app.embed.im/snow.js" defer></script>
+        <!--=============== FIREWORK-JS ===============-->
 
         <!--=============== GSAP ===============-->
         <script src="assets/js/gsap.min.js"></script>
@@ -255,6 +309,7 @@
         <script src="assets/js/scrollreveal.min.js"></script>
 
         <!--=============== MAIN JS ===============-->
+        
         <script src="assets/js/main.js"></script>
     </body>
 </html>
