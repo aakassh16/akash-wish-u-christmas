@@ -157,7 +157,7 @@ function toggleLights() {
     let giftImageSrc = '';
     
   
-    // Your logic for gift suggestions based on age and gender
+    //Logic for gift suggestions based on age and gender
     
     if (gender === 'male') {
         if (age > 0 && age < 12) {
@@ -444,7 +444,7 @@ function playSelectedSong(index) {
     const songSrc = songs[index].getAttribute('data-src');
     
 
-    // Remove the 'selected' class from all list items
+    // Removing the 'selected' class from all list items
     songs.forEach(item => {
         item.classList.remove('selected');
     });
